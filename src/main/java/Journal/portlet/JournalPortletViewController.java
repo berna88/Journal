@@ -40,12 +40,13 @@ import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
 @RequestMapping("VIEW")
 public class JournalPortletViewController {
 	private static final Log log = LogFactoryUtil.getLog(JournalPortletViewController.class);
-	
+	JournalUtil journal = new JournalUtil();
 
 	@RenderMapping
 	public String view(RenderRequest request, RenderResponse response) {
-		JournalUtil journal = new JournalUtil();
-		log.info("Data: "+journal.getFolder("ratesr"));
+		
+		log.info("Data: ");
+		journal.getCategorory();
 		return "view";
 	}
 	

@@ -2,6 +2,8 @@ package com.consistent.journal.util;
 
 import java.util.List;
 
+import com.liferay.asset.kernel.model.AssetCategory;
+import com.liferay.asset.kernel.service.AssetCategoryLocalServiceUtil;
 import com.liferay.journal.model.JournalArticle;
 import com.liferay.journal.model.JournalFolder;
 import com.liferay.journal.model.impl.JournalArticleImpl;
@@ -55,5 +57,19 @@ public class JournalUtil {
 		}
 		return structure;
 	}// Fin de metodo obtener structura
+	
+	//Metodo para obtener categorias
+	public void getCategorory(){
+		DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(AssetCategory.class, "category", PortalClassLoaderUtil.getClassLoader());
+		try {
+			List<AssetCategory> assetCategories = AssetCategoryLocalServiceUtil.dynamicQuery(dynamicQuery);
+			for(AssetCategory category : assetCategories){
+				log.info(category.getName());
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
 
 }// Fin de clase principal

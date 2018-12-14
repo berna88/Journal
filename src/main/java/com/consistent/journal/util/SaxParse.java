@@ -15,19 +15,7 @@ public class SaxParse {
 	
 	public void getSax(){
 		try {
-			SAXParserFactory factory = SAXParserFactory.newInstance();
-			SAXParser saxParser = factory.newSAXParser();
 			
-			DefaultHandler handler = new DefaultHandler() {
-				boolean bfname = false;
-				boolean blname = false;
-				boolean bnname = false;
-				boolean bsalary = false;
-				
-				public void startElement(String usr, String localName, String qName, Attributes attributes) throws SAXException{
-					log.info("Star Element: "+ qName);
-				}
-			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
