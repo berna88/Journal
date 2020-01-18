@@ -49,6 +49,7 @@ public class JournalUtil {
 			for (JournalArticle article : articles) {
 				if (article.getFolderId() == getFolder("ratesr")) {
 					structure = article.getArticleId();
+					log.info(article);
 				}
 			}
 		} catch (Exception e) {

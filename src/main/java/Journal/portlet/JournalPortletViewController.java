@@ -46,7 +46,7 @@ public class JournalPortletViewController {
 	public String view(RenderRequest request, RenderResponse response) {
 		
 		log.info("Data: ");
-		journal.getCategorory();
+		journal.getStructure("Hotels");
 		return "view";
 	}
 	
